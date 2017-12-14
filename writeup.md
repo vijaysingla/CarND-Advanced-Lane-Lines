@@ -125,10 +125,7 @@ I used a combination of color and gradient thresholds to generate a binary image
 The blue color in the stacked thresholds image shows edge detection using s-channnel thresholding by converting image into HLS domain. The green color in the stacked thresholds image shows edge detection using sobel threshold in x direction . The combination of s-channel threshold and sobelx threshold does a resonable job for edge detection for lanes in image.
 
 ​
-
-​
-
-#### 3. Perspective Transformation
+#### Perspective Transformation
 
 ​
 
