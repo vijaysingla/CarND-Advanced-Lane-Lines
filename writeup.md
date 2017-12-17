@@ -122,7 +122,7 @@ I used a combination of color and gradient thresholds to generate a binary image
 
 ​
 
-The blue color in the stacked thresholds image shows edge detection using s-channnel thresholding by converting image into HLS domain. The green color in the stacked thresholds image shows edge detection using sobel threshold in x direction . The combination of s-channel threshold and sobelx threshold does a resonable job for edge detection for lanes in image.
+The blue color in the stacked thresholds image shows edge detection using s-channnel thresholding by converting image into HLS domain. The green color in the stacked threshold image shows edge detection using l channel thresholding . The combination of s-channel threshold and l channel threshold does a resonable job for edge detection for lanes in image but there are some noise pixels in the image that can interfere with lane detection. To take care of some noise pixels, I used combination of Red color thresholding and s-channel thresholding.
 
 ​
 #### Perspective Transformation
@@ -137,15 +137,11 @@ The code for my perspective transform includes a function called `unwrap()`, whi
 
 ​
 
-src = np.float32([[290,img.shape[0]-50],[570,470],[770,470],[1120,img.shape[0]-50]])
-
-dst = np.float32([(350,h),
-
-                  (350,0),
-
-                  (w-350,0),
-
-                  (w-350,h)])
+src = np.float32([(190,720),(575,464),(707,464),(1180,720)])
+dst = np.float32([(400,h),
+                  (400,0),
+                  (w-400,0),
+                  (w-400,h)])
 
 ```
 
@@ -159,13 +155,13 @@ This resulted in the following source and destination points:
 
 |:-------------:|:-------------:| 
 
-| 290, 670      | 350, 720      | 
+| 190, 720      | 400, 720      | 
 
-| 570, 470      | 350, 0        |
+| 575, 464      | 400, 0        |
 
-| 770, 470      | 930, 0        |
+| 707, 464      | 880, 0        |
 
-| 1120, 670     | 930, 720      |
+| 1180, 720     | 880, 720      |
 
 ​
 
